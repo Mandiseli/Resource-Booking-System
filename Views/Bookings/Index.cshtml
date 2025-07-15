@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ResourceBookingSystem.Models.Booking>
+
+@{
+    ViewData["Title"] = "Bookings";
+}
+
+<h2>Bookings</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add Booking</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Resource</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Booked By</th>
+            <th>Purpose</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Resource?.Name</td>
+                <td>@item.StartTime</td>
+                <td>@item.EndTime</td>
+                <td>@item.BookedBy</td>
+                <td>@item.Purpose</td>
+            </tr>
+        }
+    </tbody>
+</table>

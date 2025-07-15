@@ -11,7 +11,8 @@
           "Microsoft.EntityFrameworkCore": "8.0.13",
           "Microsoft.EntityFrameworkCore.Design": "8.0.13",
           "Microsoft.EntityFrameworkCore.Relational": "8.0.13",
-          "Pomelo.EntityFrameworkCore.MySql": "8.0.3"
+          "Microsoft.EntityFrameworkCore.Tools": "8.0.13",
+          "Pomelo.EntityFrameworkCore.MySql": "8.0.0"
         },
         "runtime": {
           "ResourceBookingSystem.dll": {}
@@ -304,6 +305,11 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.Tools/8.0.13": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "8.0.13"
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "8.0.0"
@@ -415,15 +421,15 @@
           }
         }
       },
-      "Pomelo.EntityFrameworkCore.MySql/8.0.3": {
+      "Pomelo.EntityFrameworkCore.MySql/8.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "8.0.13",
           "MySqlConnector": "2.3.5"
         },
         "runtime": {
           "lib/net8.0/Pomelo.EntityFrameworkCore.MySql.dll": {
-            "assemblyVersion": "8.0.3.0",
-            "fileVersion": "8.0.3.0"
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.0"
           }
         }
       },
@@ -605,6 +611,13 @@
       "path": "microsoft.entityframeworkcore.relational/8.0.13",
       "hashPath": "microsoft.entityframeworkcore.relational.8.0.13.nupkg.sha512"
     },
+    "Microsoft.EntityFrameworkCore.Tools/8.0.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mbCcyX6ImsCcK2OU2qEQKLWaHn91Z7P/KlQSKCZt+rxRMM+d94jV3SR3KKSchA4TzAehZaDKeQlLxuToEX15gQ==",
+      "path": "microsoft.entityframeworkcore.tools/8.0.13",
+      "hashPath": "microsoft.entityframeworkcore.tools.8.0.13.nupkg.sha512"
+    },
     "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
       "type": "package",
       "serviceable": true,
@@ -689,12 +702,12 @@
       "path": "mysqlconnector/2.3.5",
       "hashPath": "mysqlconnector.2.3.5.nupkg.sha512"
     },
-    "Pomelo.EntityFrameworkCore.MySql/8.0.3": {
+    "Pomelo.EntityFrameworkCore.MySql/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gOHP6v/nFp5V/FgHqv9mZocGqCLGofihEX9dTbLhiXX3H7SJHmGX70GIPUpiqLT+1jIfDxg1PZh9MTUKuk7Kig==",
-      "path": "pomelo.entityframeworkcore.mysql/8.0.3",
-      "hashPath": "pomelo.entityframeworkcore.mysql.8.0.3.nupkg.sha512"
+      "sha512": "sha512-wEzKTeYCs/+cGSpT5zE8UrKkJyqpJ24yBufthDoCWUhpCCYUIsMKeX4fvaYcm9mbkfHP2dZ+p6V+ZKTAZ3hXRQ==",
+      "path": "pomelo.entityframeworkcore.mysql/8.0.0",
+      "hashPath": "pomelo.entityframeworkcore.mysql.8.0.0.nupkg.sha512"
     },
     "System.CodeDom/4.4.0": {
       "type": "package",

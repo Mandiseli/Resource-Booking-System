@@ -1,0 +1,41 @@
+﻿@model ResourceBookingSystem.Models.Booking
+@{
+    ViewData["Title"] = "Create Booking";
+}
+
+<h2>Create Booking</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="ResourceId" class="form-label"></label>
+        <select asp-for="ResourceId" asp-items="ViewBag.ResourceId" class="form-control"></select>
+        <span asp-validation-for="ResourceId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="StartTime" class="form-label"></label>
+        <input asp-for="StartTime" type="datetime-local" class="form-control" />
+        <span asp-validation-for="StartTime" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="EndTime" class="form-label"></label>
+        <input asp-for="EndTime" type="datetime-local" class="form-control" />
+        <span asp-validation-for="EndTime" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="BookedBy" class="form-label"></label>
+        <input asp-for="BookedBy" class="form-control" />
+        <span asp-validation-for="BookedBy" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Purpose" class="form-label"></label>
+        <input asp-for="Purpose" class="form-control" />
+        <span asp-validation-for="Purpose" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Book</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

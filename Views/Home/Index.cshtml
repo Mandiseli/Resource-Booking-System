@@ -1,8 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Welcome";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mt-5">
+    <h2>Welcome to the Internal Resource Booking System</h2>
+    <p class="lead">
+        Manage your company resources easily by viewing and booking meeting rooms, vehicles, and equipment.
+    </p>
+
+    <div class="mt-4">
+        <a class="btn btn-primary me-2" href="@Url.Action("Index", "Resources")">View Resources</a>
+        <a class="btn btn-success" href="@Url.Action("Index", "Bookings")">View Bookings</a>
+    </div>
 </div>

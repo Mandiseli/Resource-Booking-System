@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace ResourceBookingSystem.Migrations
 {
     /// <inheritdoc />
@@ -61,6 +63,24 @@ namespace ResourceBookingSystem.Migrations
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.InsertData(
+                table: "Resources",
+                columns: new[] { "Id", "Capacity", "Description", "IsAvailable", "Location", "Name" },
+                values: new object[,]
+                {
+                    { 1, 10, "Large meeting room with projector", true, "3rd Floor", "Meeting Room A" },
+                    { 2, 5, "Toyota Corolla", true, "Parking Bay 1", "Company Car 1" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Bookings",
+                columns: new[] { "Id", "BookedBy", "EndTime", "Purpose", "ResourceId", "StartTime" },
+                values: new object[,]
+                {
+                    { 1, "Alice", new DateTime(2025, 7, 15, 10, 0, 0, 0, DateTimeKind.Unspecified), "Morning Standup", 1, new DateTime(2025, 7, 15, 9, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, "Bob", new DateTime(2025, 7, 16, 16, 0, 0, 0, DateTimeKind.Unspecified), "Client Visit", 2, new DateTime(2025, 7, 16, 14, 0, 0, 0, DateTimeKind.Unspecified) }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Bookings_ResourceId",

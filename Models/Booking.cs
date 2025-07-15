@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace InternalResourceBookingSystem.Models
+namespace ResourceBookingSystem.Models
 {
     public class Booking
     {
@@ -9,8 +9,6 @@ namespace InternalResourceBookingSystem.Models
 
         [Required]
         public int ResourceId { get; set; }
-
-        public Resource? Resource { get; set; }
 
         [Required]
         public DateTime StartTime { get; set; }
@@ -23,5 +21,7 @@ namespace InternalResourceBookingSystem.Models
 
         [Required]
         public string? Purpose { get; set; }
+
+        public Resource? Resource { get; set; }
     }
 }

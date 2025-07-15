@@ -1,8 +1,8 @@
-﻿using ResourceBookingSystem.Models;
+﻿//using ResourceBookingSystem.Models;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace InternalResourceBookingSystem.Models
+namespace ResourceBookingSystem.Models
 {
     public class Resource
     {

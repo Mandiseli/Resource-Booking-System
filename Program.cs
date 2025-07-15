@@ -1,5 +1,5 @@
-using InternalResourceBookingSystem.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore; 
+using ResourceBookingSystem.Models;
 
 namespace ResourceBookingSystem
 {
@@ -9,21 +9,26 @@ namespace ResourceBookingSystem
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            // ✅ Get the connection string once
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+            if (string.IsNullOrEmpty(connectionString))
+            {
+                throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            }
+
+            // ✅ Register services
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-            ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
-
+                options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            // ✅ Configure middleware
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -31,7 +36,6 @@ namespace ResourceBookingSystem
             app.UseStaticFiles();
 
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.MapControllerRoute(
